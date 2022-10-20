@@ -133,6 +133,14 @@ fi
 
 if [ -x "$(command -v chezmoi)" ]; then
     alias cm='chezmoi'
+    alias aliases='chezmoi edit $DOTFOLDER/.bash_aliases'
+    alias config='chezmoi edit $DOTFOLDER/.zshrc'
+    alias apply='chezmoi apply'
+    alias init='chezmoi init --apply claubervs'
+fi
+
+if [ -x "$(command -v lazygit)" ]; then
+    alias lg='lazygit'
 fi
 
 
