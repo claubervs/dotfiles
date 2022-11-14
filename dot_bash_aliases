@@ -14,16 +14,16 @@ fi
 ###############################
 ##   Script for ZSH or BASH  ##
 ###############################
-if [ -n '$SHELL -c echo $ZSH_VERSION' ]; then
+if [ -n "`$SHELL -c echo '$ZSH_VERSION'" ]; then
     # assume Zsh
     # zsh $DOTFOLDER/custom_script.sh
-    _shell=zsh
+    default_shell=zsh_shell
     alias reload='source $DOTFOLDER/.zshrc'
     alias config='$EDITOR $DOTFOLDER/.zshrc'
-elif [ -n '$SHELL -c echo $BASH_VERSION' ]; then
+elif [ -n "`$SHELL -c echo '$BASH_VERSION'`" ]; then
     # assume Bash
     # sh $DOTFOLDER/custom_script.sh
-    _shell=bash
+    default_shell=bash_shell
     alias reload='source $DOTFOLDER/.bashrc'
     alias config='$EDITOR $DOTFOLDER/.bashrc'
     
