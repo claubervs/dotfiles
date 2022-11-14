@@ -27,7 +27,7 @@ elif [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
     alias reload='source $DOTFOLDER/.bashrc'
     alias config='$EDITOR $DOTFOLDER/.bashrc'
     
-else;
+else
     # something else like fish
     
 fi
