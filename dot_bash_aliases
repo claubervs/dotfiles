@@ -26,9 +26,12 @@ elif [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
     _shell=bash
     alias reload='source $DOTFOLDER/.bashrc'
     alias config='$EDITOR $DOTFOLDER/.bashrc'
-else
+    
+else;
     # something else like fish
+    
 fi
+
 alias aliases='$EDITOR $DOTFOLDER/.bash_aliases'
 
 #Simple command to make a directory and then change to it
