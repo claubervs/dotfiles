@@ -133,8 +133,10 @@ fi
 
 if [ -x "$(command -v exa)" ]; then
     alias ls="exa --icons --group-directories-first"
-    alias la="exa --long --icons --header --all --group --group-directories-first --git"
-    alias tree="exa --long --icons --header --all --group --group-directories-first --git --tree"
+    # alias la="exa --long --icons --header --all --group --group-directories-first --git"
+    alias la="exa --long --icons --header --all --group --group-directories-first"
+    # alias tree="exa --long --icons --header --all --group --group-directories-first --git --tree"
+    alias tree="exa --long --icons --header --all --group --group-directories-first --tree"
 fi
 
 if [ -x "$(command -v chezmoi)" ]; then
