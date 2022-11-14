@@ -152,7 +152,7 @@ plugins=(
 # Please instal fzf before enabling these options.
 # to install in Ubuntu use 'sudo apt install -y fzf'
 
-if [ -x "$(command -v fzf)" ]; then
+if [[ -x $(command -v fzf) ]]; then
 	# Set FZF default directory, to locate install directory use 'which fzf'
 	export FZF_BASE='$HOME/.fzf'
 fi
