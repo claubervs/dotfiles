@@ -1,4 +1,4 @@
-export DOTFOLDER='$HOME'
+export DOTFOLDER=$HOME
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/home/clauber/.cargo/bin:$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin/:$PATH
