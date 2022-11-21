@@ -17,19 +17,15 @@ fi
 if [ -n "`$SHELL -c echo '$ZSH_VERSION'`" ]; then
     # assume Zsh
     # zsh $DOTFOLDER/custom_script.sh
-    default_shell=zsh_shell
     alias reload='source $DOTFOLDER/.zshrc'
     alias config='$EDITOR $DOTFOLDER/.zshrc'
 elif [ -n "`$SHELL -c echo '$BASH_VERSION'`" ]; then
     # assume Bash
     # sh $DOTFOLDER/custom_script.sh
-    default_shell=bash_shell
     alias reload='source $DOTFOLDER/.bashrc'
     alias config='$EDITOR $DOTFOLDER/.bashrc'
-    
 else
     # something else like fish
-    
 fi
 
 alias aliases='$EDITOR $DOTFOLDER/.bash_aliases'
@@ -141,10 +137,13 @@ fi
 
 if [ -x "$(command -v chezmoi)" ]; then
     alias cz='chezmoi'
-    if [ _shell=zsh ]; then
-		alias config='chezmoi edit $DOTFOLDER/.zshrc'
-    elif [ _shel=bash ]; then
-		alias config='chezmoi edit $DOTFOLDER/.bashrc'
+    if [ -n "`$SHELL -c echo '$ZSH_VERSION'`" ]; then
+        alias refresh="source $DOTFOLDER/.zshrc"
+        alias config='chezmoi edit $DOTFOLDER/.zshrc'
+    fi
+    if [ -n "`$SHELL -c echo '$BASH_VERSION'`" ]; then
+        alias refresh='source $DOTFOLDER/.bashrc'
+        alias config='chezmoi edit $DOTFOLDER/.bashrc'
     fi
     # edits a file from the repo
     alias aliases='chezmoi edit $DOTFOLDER/.bash_aliases'
