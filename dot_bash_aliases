@@ -101,25 +101,25 @@ else
 fi
 
 # === DOCKER ===
-if [ -x "$(command -v docker)" ]; then
-	alias docker='d'
-    alias dps='docker ps'
-    alias dps-all='docker ps -all'
-    alias dps-down='docker ps -f "status=exited"'
-    alias dstart='docker start'
-    alias dstop='docker stop'
-    alias dlist='docker images'
-    alias dup='docker compose up -d'
+#if [ -x "$(command -v docker)" ]; then
+#	alias d='docker'
+#    alias dps='docker ps'
+#    alias dps-all='docker ps -all'
+#    alias dps-down='docker ps -f "status=exited"'
+#    alias dstart='docker start'
+#    alias dstop='docker stop'
+#    alias dlist='docker images'
+#    alias dup='docker compose up -d'
 
     # (Next Command) brings up all containers if one is not defined after dcup
-    alias dup='docker compose up -d'
+#    alias dup='docker compose up -d'
     # (Next Command) brings down all containers if one is not defined after dcdown
-    alias ddown='docker compose stop'
+#    alias ddown='docker compose stop'
     # (Next Command) pulls all new images is specified after dcpull
-    alias dpull='docker compose pull'
-    alias dlogs='docker compose logs -tf --tail="50" '  
-    alias dtail='docker logs -tf --tail="50" "$@"'
-fi
+#    alias dpull='docker compose pull'
+#    alias dlogs='docker compose logs -tf --tail="50" '  
+#    alias dtail='docker logs -tf --tail="50" "$@"'
+#fi
 
 # === Programs ===
 if [ -x "$(command -v python3)" ]; then
