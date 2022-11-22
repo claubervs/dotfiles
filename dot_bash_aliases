@@ -14,12 +14,13 @@ fi
 ###############################
 ##   Script for ZSH or BASH  ##
 ###############################
-if [ -n "`$SHELL -c echo '$ZSH_VERSION'`" ]; then
+
+if [ -n "$($SHELL -c 'echo $ZSH_VERSION')" ]; then
     # assume Zsh
     # zsh $DOTFOLDER/custom_script.sh
     alias reload='source $DOTFOLDER/.zshrc'
     alias config='$EDITOR $DOTFOLDER/.zshrc'
-elif [ -n "`$SHELL -c echo '$BASH_VERSION'`" ]; then
+elif [ -n "$($SHELL -c 'echo $BASH_VERSION')" ]; then
     # assume Bash
     # sh $DOTFOLDER/custom_script.sh
     alias reload='source $DOTFOLDER/.bashrc'
@@ -137,14 +138,17 @@ fi
 
 if [ -x "$(command -v chezmoi)" ]; then
     alias cz='chezmoi'
-    if [ -n "`$SHELL -c echo '$ZSH_VERSION'`" ]; then
+
+    if [ -n "$($SHELL -c 'echo $ZSH_VERSION')" ]; then
         alias refresh="source $DOTFOLDER/.zshrc"
         alias config='chezmoi edit $DOTFOLDER/.zshrc'
     fi
-    if [ -n "`$SHELL -c echo '$BASH_VERSION'`" ]; then
+    
+    if [ -n "$($SHELL -c 'echo $BASH_VERSION')" ]; then
         alias refresh='source $DOTFOLDER/.bashrc'
         alias config='chezmoi edit $DOTFOLDER/.bashrc'
     fi
+    
     # edits a file from the repo
     alias aliases='chezmoi edit $DOTFOLDER/.bash_aliases'
     # updates from changes in github
