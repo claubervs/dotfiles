@@ -102,22 +102,22 @@ fi
 
 # === DOCKER ===
 if [ -x "$(command -v docker)" ]; then
-    alias dps='docker ps'
-    alias dpsa='docker ps -all'
-    alias dpsdown='docker ps -f 'status=exited''
-    alias dup='docker start'
-    alias ddown='docker stop'
-    alias dli='docker images'
-    alias dcupd='docker compose up -d'
+    alias ps='docker ps'
+    alias ps-all='docker ps -all'
+    alias ps-down='docker ps -f 'status=exited''
+    alias start='docker start'
+    alias stop='docker stop'
+    alias list='docker images'
+    alias docker-up='docker compose up -d'
 
     # (Next Command) brings up all containers if one is not defined after dcup
-    alias dcup='docker compose up -d'
+    alias up='docker compose up -d'
     # (Next Command) brings down all containers if one is not defined after dcdown
-    alias dcdown='docker compose stop'
+    alias down='docker compose stop'
     # (Next Command) pulls all new images is specified after dcpull
-    alias dcpull='docker compose pull'
-    alias dclogs='docker compose logs -tf --tail="50" '  
-    alias dtail='docker logs -tf --tail="50" "$@"'
+    alias pull='docker compose pull'
+    alias logs='docker compose logs -tf --tail="50" '  
+    alias docker-tail='docker logs -tf --tail="50" "$@"'
 fi
 
 # === Programs ===
@@ -137,7 +137,7 @@ if [ -x "$(command -v exa)" ]; then
 fi
 
 if [ -x "$(command -v chezmoi)" ]; then
-    alias cz='chezmoi'
+    alias cm='chezmoi'
 
     if [ -n "$($SHELL -c 'echo $ZSH_VERSION')" ]; then
         alias refresh="source $DOTFOLDER/.zshrc"
@@ -164,9 +164,12 @@ elif [ -x "$(command -v batcat)" ]; then
 fi
 
 if [ -x "$(command -v lazygit)" ]; then
-    alias lz='lazygit'
+    alias lg='lazygit'
 fi
 
+if [ -x "$(command -v chezmoi)" ]; then
+	alias ld='lazydocker'
+fi
 
 ###############
 ##   MACOS   ##
