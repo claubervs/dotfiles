@@ -7,6 +7,8 @@
 if [ -x "$(command -v micro)" ]; then
     # Micro as the default text editor
     export EDITOR='micro'
+    alias m='micro'
+    alias sm='sudo micro'
 else
     export EDITOR='nano'
 fi
@@ -73,7 +75,7 @@ alias ......='cd ../../../../..'
 alias _='sudo '
 alias s='sudo '
 alias md='mkdir -p'
-alias rd='rm -fr '
+alias rmd='rm -fr '
 alias rmf='rm -f '
 alias x='exit'
 alias la='ls -lAFq'
@@ -88,6 +90,8 @@ alias su='sudo -i'
 alias wget='wget -c'
 # alias ?='apropos'
 alias myip='hostname -I | awk '\''{print }'\'''
+# expand below with a search to return only the DNS and not all text
+alias mydns='sudo resolvectl'
 
 # === PACKAGE MANAGEMENT ===
 if [ -x "$(command -v nala)" ]; then
