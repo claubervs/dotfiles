@@ -183,6 +183,16 @@ if [ -x "$(command -v git)" ]; then
 	alias clone-repo-dotfiles='git clone --recurse-submodules -j8 https://github.com/claubervs/dotfiles.git'
 fi
 
+# Detect kubectl installation and assign aliases
+if [ -x "$(command -v kubectl)" ]; then
+	alias k='kubectl'
+fi
+
+# Detect k3s installation and assign aliases
+#if [ -x "$(command -v k3s)" ]; then
+#	
+#fi
+
 
 ###############
 ##   MACOS   ##
