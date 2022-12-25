@@ -186,6 +186,7 @@ fi
 # Detect kubectl installation and assign aliases
 if [ -x "$(command -v kubectl)" ]; then
 	alias k='kubectl'
+	source <(kubectl completion bash)
 fi
 
 # Detect k3s installation and assign aliases
