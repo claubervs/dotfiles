@@ -141,6 +141,7 @@ if [ -x "$(command -v nala)" ]; then
     alias remove='sudo nala remove'
     alias clean='sudo nala clean'
     alias auto='sudo nala autopurge && sudo nala autoremove'
+    alias search='nala search'
 else
     alias install='sudo apt install -y'
     alias upgrade='sudo apt update && sudo  ugrade -y'
@@ -148,6 +149,7 @@ else
     alias remove='sudo apt remove'
     alias clean='sudo apt clean'
     alias auto='sudo apt'
+    alias search='apt search'
 fi
 
 # === DOCKER ===
